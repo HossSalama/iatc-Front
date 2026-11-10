@@ -1,0 +1,168 @@
+@import 'tailwindcss';
+
+@config '../../../../tailwind.config.cjs';
+
+@layer theme {
+	:root {
+		--neutral: #ffffff;
+
+		--primary: #102A71;
+		--primary-hover: #0D2366;
+		--primary-active: #0A1B50;
+		--primary-soft: #EBF2FF;
+		--primary-deep: #0D2366;
+		--primary-mild: #102A71;
+		--primary-subtle: #F0F5FF;
+
+		--secondary: #FF6B00;
+		--secondary-hover: #E05E00;
+		--secondary-light: #FF8533;
+
+		--accent: #FF6B00;
+		--accent-orange: #FF6B00;
+
+		--background: #FFFFFF;
+		--background-secondary: #F8FAFC;
+
+		--surface: #FFFFFF;
+		--surface-alt: #F1F5F9;
+
+		--border: #E2E8F0;
+
+		--text-primary: #0D1B3E;
+		--text-secondary: #64748B;
+		--text-muted: #94A3B8;
+
+		--success: #22C55E;
+		--success-subtle: #22C55E1a;
+		--warning: #FF6B00;
+		--warning-subtle: #FF6B001a;
+		--error: #EF4444;
+		--error-subtle: #EF44441a;
+		--info: #102A71;
+		--info-subtle: #102A711a;
+
+		--gray-50: #fafafa;
+		--gray-100: #f8fafc;
+		--gray-200: #e2e8f0;
+		--gray-300: #cbd5e1;
+		--gray-400: #94a3b8;
+		--gray-500: #64748b;
+		--gray-600: #475569;
+		--gray-700: #334155;
+		--gray-800: #1e293b;
+		--gray-900: #0f172a;
+		--gray-950: #090d16;
+	}
+
+	.dark {
+		--neutral: #ffffff;
+
+		--primary: #3B82F6;
+		--primary-hover: #2563EB;
+		--primary-active: #1D4ED8;
+		--primary-soft: #1E293B;
+		--primary-deep: #1D4ED8;
+		--primary-mild: #60A5FA;
+		--primary-subtle: rgba(59, 130, 246, 0.15);
+
+		--secondary: #FF7F33;
+		--secondary-hover: #F97316;
+		--secondary-light: #FB923C;
+
+		--accent: #FF7F33;
+		--accent-orange: #FF7F33;
+
+		--background: #0B0F19;
+		--background-secondary: #111827;
+
+		--surface: #1E293B;
+		--surface-alt: #283548;
+
+		--border: #334155;
+
+		--text-primary: #F8FAFC;
+		--text-secondary: #94A3B8;
+		--text-muted: #64748B;
+
+		--success: #22C55E;
+		--success-subtle: #22C55E1a;
+		--warning: #FB923C;
+		--warning-subtle: #FB923C1a;
+		--error: #EF4444;
+		--error-subtle: #EF44441a;
+		--info: #38BDF8;
+		--info-subtle: #38BDF81a;
+
+		--gray-50: #fafafa;
+		--gray-100: #f8fafc;
+		--gray-200: #e2e8f0;
+		--gray-300: #cbd5e1;
+		--gray-400: #94a3b8;
+		--gray-500: #64748b;
+		--gray-600: #475569;
+		--gray-700: #334155;
+		--gray-800: #1e293b;
+		--gray-900: #0f172a;
+		--gray-950: #090d16;
+	}
+}
+
+@layer base {
+	*,
+	::after,
+	::before,
+	::backdrop,
+	::file-selector-button {
+		border-color: var(--color-gray-200, currentColor);
+	}
+
+	button, [role=button] {
+		cursor: pointer;
+	}
+
+	body {
+		@apply font-sans text-gray-500 dark:text-gray-400 text-sm bg-gray-100 dark:bg-gray-950 leading-normal font-medium;
+		-webkit-font-smoothing: antialiased;
+	}
+
+	h1,
+	.h1 {
+		@apply text-4xl font-bold text-gray-900 dark:text-gray-100;
+	}
+
+	h2,
+	.h2 {
+		@apply text-3xl font-bold text-gray-900 dark:text-gray-100;
+	}
+
+	h3,
+	.h3 {
+		@apply text-2xl font-bold text-gray-900 dark:text-gray-100;
+	}
+
+	h4,
+	.h4 {
+		@apply text-xl font-bold text-gray-900 dark:text-gray-100;
+	}
+
+	h5,
+	.h5 {
+		@apply text-lg font-bold text-gray-900 dark:text-gray-100;
+	}
+
+	h6,
+	.h6 {
+		@apply text-base font-semibold text-gray-900 dark:text-gray-100;
+	}
+
+	hr {
+		@apply border-gray-200 dark:border-gray-600;
+	}
+}
+
+@layer components {
+	.heading-text {
+		@apply text-gray-900 dark:text-gray-100;
+	}
+}
