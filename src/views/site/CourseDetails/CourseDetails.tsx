@@ -43,7 +43,7 @@ import {
     formatCount,
     formatDate,
     formatDuration,
-    formatPrice,
+    // formatPrice,
     instructorHref,
     localizedName,
 } from '@/utils/catalog'
@@ -179,7 +179,7 @@ const CourseDetails = () => {
     >(null)
 
     // Payment Request Modal State
-    const [paymentModalOpen, setPaymentModalOpen] = useState(false)
+    // const [paymentModalOpen, setPaymentModalOpen] = useState(false)
 
     if (error) {
         return (
@@ -240,13 +240,14 @@ const CourseDetails = () => {
             return
         }
 
-        // Paid courses require manual payment submission
-        if (course.price && course.price > 0) {
-            setLockedModalOpen(false)
-            setPreviewModalOpen(false)
-            setPaymentModalOpen(true)
-            return
-        }
+        // Price commented out — all courses are free, enroll directly
+        // // Paid courses require manual payment submission
+        // if (course.price && course.price > 0) {
+        //     setLockedModalOpen(false)
+        //     setPreviewModalOpen(false)
+        //     setPaymentModalOpen(true)
+        //     return
+        // }
 
         setEnrolling(true)
         try {
@@ -329,9 +330,11 @@ const CourseDetails = () => {
                         </div>
                     </div>
                 ) : (
+                    {/* Price commented out — all courses are free
                     <p className="text-2xl font-bold tracking-tight text-text-primary">
                         {formatPrice(course.price, lang)}
                     </p>
+                    */}
                 )}
 
                 {/* Payment Review in Progress badge — shown when a payment request is pending */}
@@ -731,7 +734,7 @@ const CourseDetails = () => {
                 isOpen={lockedModalOpen}
                 item={selectedLockedItem}
                 courseTitle={course.name}
-                coursePrice={course.price}
+                // coursePrice={course.price}
                 enrolling={enrolling}
                 onClose={() => {
                     setLockedModalOpen(false)
@@ -764,7 +767,7 @@ const CourseDetails = () => {
                 }}
             />
 
-            {/* Payment Request Modal for Paid Courses */}
+            {/* Payment Request Modal commented out — all courses are free
             <PaymentRequestModal
                 course={{
                     id: course.id,
@@ -774,6 +777,7 @@ const CourseDetails = () => {
                 isOpen={paymentModalOpen}
                 onClose={() => setPaymentModalOpen(false)}
             />
+            */}
         </>
     )
 }

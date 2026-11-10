@@ -38,8 +38,9 @@ const Courses = () => {
             : undefined,
         deliveryType:
             (params.get('type') as 'recorded' | 'live' | null) || undefined,
-        priceBucket:
-            (params.get('price') as 'free' | 'paid' | null) || undefined,
+        // priceBucket commented out — all courses are free
+        // priceBucket:
+        //     (params.get('price') as 'free' | 'paid' | null) || undefined,
         minRating: params.get('rating')
             ? Number(params.get('rating'))
             : undefined,
@@ -67,12 +68,12 @@ const Courses = () => {
         () =>
             refineCourses(courses, {
                 language: filters.language,
-                priceBucket: filters.priceBucket,
+                // priceBucket: filters.priceBucket,
                 minRating: filters.minRating,
                 deliveryType: filters.deliveryType,
                 sort,
             }),
-        [courses, filters.language, filters.priceBucket, filters.minRating, filters.deliveryType, sort],
+        [courses, filters.language, filters.minRating, filters.deliveryType, sort],
     )
 
     const updateParams = (next: Record<string, string | undefined>) => {
@@ -92,7 +93,7 @@ const Courses = () => {
         updateParams({
             category: next.categoryId ? String(next.categoryId) : undefined,
             type: next.deliveryType,
-            price: next.priceBucket,
+            // price: next.priceBucket,
             rating: next.minRating ? String(next.minRating) : undefined,
             lang: next.language,
         })
@@ -192,12 +193,14 @@ const Courses = () => {
                         <option value="rating">
                             {t('courses.sortRating', 'Highest rated')}
                         </option>
+                       {/* Price sort commented out — all courses are free
                         <option value="priceAsc">
                             {t('courses.sortPriceAsc', 'Price: low to high')}
                         </option>
                         <option value="priceDesc">
                             {t('courses.sortPriceDesc', 'Price: high to low')}
                         </option>
+                        */}
                     </select>
 
                     <div
@@ -322,7 +325,7 @@ const Courses = () => {
                             )}
                             description={t(
                                 'courses.noResultsBody',
-                                'Try widening the price or rating range, or clear the filters to see the full catalogue.',
+                                'Try widening the rating range, or clear the filters to see the full catalogue.',   
                             )}
                             action={
                                 <button

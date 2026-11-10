@@ -391,17 +391,18 @@ const CoursesList = () => {
                     </span>
                 ),
             },
-            {
-                header: () => t('courseManagement.price', 'السعر'),
-                accessorKey: 'price',
-                enableSorting: false,
-                size: 110,
-                cell: (props) => (
-                    <span className="text-xs font-bold text-indigo-600 dark:text-indigo-400 dir-ltr inline-block">
-                        ${props.row.original.price}
-                    </span>
-                ),
-            },
+            // Price column commented out — all courses are free
+            // {
+            //     header: () => t('courseManagement.price', 'السعر'),
+            //     accessorKey: 'price',
+            //     enableSorting: false,
+            //     size: 110,
+            //     cell: (props) => (
+            //         <span className="text-xs font-bold text-indigo-600 dark:text-indigo-400 dir-ltr inline-block">
+            //             ${props.row.original.price}
+            //         </span>
+            //     ),
+            // },
             {
                 header: () => t('courseManagement.rating', 'التقييم'),
                 accessorKey: 'averageRating',
@@ -653,9 +654,11 @@ const CoursesList = () => {
                                         </div>
 
                                         <div className="flex items-center justify-between mt-3 pt-2 text-xs text-gray-500 dark:text-gray-400">
+                                             {/* Price commented out — all courses are free
                                             <span className="font-bold text-indigo-600 dark:text-indigo-400 dir-ltr">
                                                 ${course.price}
                                             </span>
+                                            */}
                                             <div className="flex items-center gap-1">
                                                 <HiOutlineStar className="text-amber-400 text-sm" />
                                                 <span className="font-semibold text-gray-700 dark:text-gray-300">

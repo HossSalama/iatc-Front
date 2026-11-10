@@ -29,7 +29,7 @@ interface LockedContentModalProps {
     onClose: () => void
     item: AnyContentItem | null
     courseTitle?: string
-    coursePrice?: number
+    // coursePrice?: number
     onEnroll: () => void
     enrolling?: boolean
 }
@@ -39,7 +39,7 @@ export const LockedContentModal = ({
     onClose,
     item,
     courseTitle,
-    coursePrice,
+    // coursePrice,
     onEnroll,
     enrolling = false,
 }: LockedContentModalProps) => {
@@ -146,11 +146,13 @@ export const LockedContentModal = ({
                             {t('course.afterEnrol', 'Lifetime access · Learn at your own pace · Certificate on completion')}
                         </span>
                     </div>
+                   {/* Price commented out — all courses are free
                     {typeof coursePrice !== 'undefined' && (
                         <span className="text-sm font-bold text-text-primary shrink-0 ms-2">
                             {formatPrice(coursePrice, lang)}
                         </span>
                     )}
+                    */}
                 </div>
             </div>
 

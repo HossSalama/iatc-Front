@@ -423,12 +423,14 @@ const CourseDetails = () => {
                                     <span>{course.instructor?.name || '-'}</span>
                                 </div>
                             </div>
+                             {/* Price commented out — all courses are free
                             <div>
                                 <span className="font-semibold text-gray-700 dark:text-gray-300">
                                     {t('courseManagement.price', 'السعر')}:{' '}
                                 </span>
                                 <span className="font-bold text-indigo-600 dir-ltr inline-block">${course.price}</span>
                             </div>
+                            */}
                             <div>
                                 <span className="font-semibold text-gray-700 dark:text-gray-300">
                                     {t('courseManagement.duration', 'المدة')}:{' '}

@@ -32,7 +32,7 @@ interface FormErrors {
     name?: string
     shortDescription?: string
     description?: string
-    price?: string
+    // price?: string
     language?: string
     deliveryType?: string
     startDate?: string
@@ -50,7 +50,8 @@ const CourseForm = () => {
     const [name, setName] = useState<string>('')
     const [shortDescription, setShortDescription] = useState<string>('')
     const [description, setDescription] = useState<string>('')
-    const [price, setPrice] = useState<number | string>('')
+ // Price state commented out — all courses are free
+    // const [price, setPrice] = useState<number | string>('')
     const [language, setLanguage] = useState<string>('Arabic')
     const [deliveryType, setDeliveryType] = useState<CourseDeliveryType>('Recorded')
     const [startDate, setStartDate] = useState<Date | null>(null)
@@ -128,7 +129,7 @@ const CourseForm = () => {
                     setName(data.name)
                     setShortDescription(data.shortDescription)
                     setDescription(data.description || '')
-                    setPrice(data.price)
+                    // setPrice(data.price)
                     setLanguage(data.language)
                     if (data.category) setCategoryId(data.category.id)
                     if (data.instructor) setInstructorId(data.instructor.id)
@@ -189,10 +190,11 @@ const CourseForm = () => {
             errors.description = t('courseManagement.descRequired', 'يرجى إدخال الوصف التفصيلي.')
             isValid = false
         }
-        if (price === '' || isNaN(Number(price)) || Number(price) < 0) {
-            errors.price = t('courseManagement.priceInvalid', 'يرجى إدخال سعر صحيح.')
-            isValid = false
-        }
+          // Price validation commented out — all courses are free
+        // if (price === '' || isNaN(Number(price)) || Number(price) < 0) {
+        //     errors.price = t('courseManagement.priceInvalid', 'يرجى إدخال سعر صحيح.')
+        //     isValid = false
+        // }
         if (!language.trim()) {
             errors.language = t('courseManagement.languageRequired', 'يرجى إدخال لغة الدورة.')
             isValid = false
@@ -231,7 +233,7 @@ const CourseForm = () => {
                     name: name.trim(),
                     shortDescription: shortDescription.trim(),
                     description: description.trim(),
-                    price: Number(price),
+                                        price: 0, // Price commented out — all courses are free
                     language: language.trim(),
                     startDate: deliveryType === 'Live' && startDate ? new Date(startDate).toISOString() : null,
                 }
@@ -248,7 +250,7 @@ const CourseForm = () => {
                     name: name.trim(),
                     shortDescription: shortDescription.trim(),
                     description: description.trim(),
-                    price: Number(price),
+                                        price: 0, // Price commented out — all courses are free
                     language: language.trim(),
                     deliveryType,
                     startDate: deliveryType === 'Live' && startDate ? new Date(startDate).toISOString() : null,
@@ -536,7 +538,7 @@ const CourseForm = () => {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        {/* Price */}
+                     {/* Price input commented out — all courses are free
                         <div>
                             <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1.5">
                                 {t('courseManagement.price', 'السعر ($)')} <span className="text-red-500">*</span>
@@ -557,6 +559,7 @@ const CourseForm = () => {
                                 <span className="text-xs text-red-500 mt-1 block">{formErrors.price}</span>
                             )}
                         </div>
+                        */}
 
                         {/* Language */}
                         <div>

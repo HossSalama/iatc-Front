@@ -9,7 +9,7 @@ export interface CourseFilterValue {
     categoryId?: number
     instructorId?: number
     deliveryType?: 'recorded' | 'live'
-    priceBucket?: 'free' | 'paid'
+    // priceBucket?: 'free' | 'paid'
     minRating?: number
     language?: string
 }
@@ -153,6 +153,7 @@ const CourseFilters = ({
                 />
             </Group>
 
+           {/* Price filter commented out — all courses are free
             <Group title={t('courses.price', 'Price')}>
                 <Choice
                     name="price"
@@ -175,6 +176,7 @@ const CourseFilters = ({
                     onSelect={() => onChange({ ...value, priceBucket: 'paid' })}
                 />
             </Group>
+            */}
 
             <Group title={t('courses.rating', 'Rating')} defaultOpen={false}>
                 <Choice

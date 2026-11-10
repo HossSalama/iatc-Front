@@ -29,7 +29,7 @@ import type {
     MyPaymentRequestDetail,
     PaymentRequestStatus,
 } from '@/@types/payment'
-import { formatPrice } from '@/utils/catalog'
+// import { formatPrice } from '@/utils/catalog'
 import { useLocaleStore } from '@/store/localeStore'
 
 const UserPaymentRequestDetails = () => {
@@ -325,6 +325,7 @@ const UserPaymentRequestDetails = () => {
                                     </h3>
                                 </div>
 
+                                  {/* Amount commented out — all courses are free
                                 <div>
                                     <span className="text-xs text-text-muted block">
                                         {t(
@@ -336,6 +337,7 @@ const UserPaymentRequestDetails = () => {
                                         {formatPrice(request.amount, lang)}
                                     </span>
                                 </div>
+                                */}
 
                                 <div>
                                     <Button

@@ -23,7 +23,7 @@ import {
     apiSubmitPaymentRequest,
 } from '@/services/PaymentService'
 import type { PaymentMethodPublicResponse } from '@/@types/payment'
-import { formatPrice } from '@/utils/catalog'
+// import { formatPrice } from '@/utils/catalog'
 
 interface PaymentRequestModalProps {
     isOpen: boolean
@@ -31,7 +31,7 @@ interface PaymentRequestModalProps {
     course: {
         id: number
         name: string
-        price?: number
+        // price?: number
     }
     onSuccess?: () => void
 }
@@ -285,6 +285,7 @@ const PaymentRequestModal = ({
                             {course.name}
                         </h2>
                     </div>
+                   {/* Price commented out — all courses are free
                     {typeof course.price === 'number' && (
                         <div className="text-end shrink-0">
                             <span className="text-xs text-text-secondary block">
@@ -295,6 +296,7 @@ const PaymentRequestModal = ({
                             </span>
                         </div>
                     )}
+                    */}
                 </div>
             </div>
 

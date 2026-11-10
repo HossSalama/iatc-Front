@@ -9,7 +9,7 @@ import CourseThumbnail from './CourseThumbnail'
 import {
     courseHref,
     formatDuration,
-    formatPrice,
+    // formatPrice,
     localizedName,
 } from '@/utils/catalog'
 import type { CatalogCourse } from '@/services/CatalogService'
@@ -162,9 +162,11 @@ const CourseCard = ({
                     </div>
                 </div>
                 <div className="flex shrink-0 items-center gap-3 sm:flex-col sm:items-end sm:justify-between">
+                     {/* Price commented out — all courses are free
                     <p className="text-lg font-bold text-text-primary">
                         {formatPrice(course.price, lang)}
                     </p>
+                    */}
                     {showSave && (
                         <SaveCourseButton
                             courseId={course.id}
@@ -264,9 +266,11 @@ const CourseCard = ({
                                         {formatDuration(course.duration, lang)}
                                     </span>
                                 </div>
+                                  {/* Price commented out — all courses are free
                                 <span className="text-base font-bold text-text-primary">
                                     {formatPrice(course.price, lang)}
                                 </span>
+                                */}
                             </div>
                         </>
                     )}
